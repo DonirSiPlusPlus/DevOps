@@ -1,0 +1,12 @@
+version: "3"
+services:
+  first:
+    build: ../part5/
+    ports:
+      - "80:81"
+  second:
+    build: ./server/
+    depends_on:
+      - first
+    ports:
+      - "81:8080"
